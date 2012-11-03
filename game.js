@@ -16,6 +16,16 @@ $(document).ready(function() {
 	});
 });
 
+function changeImage (src) {
+	$("#status").clearCanvas();
+	$("#status").drawImage({
+		source: "images/"+src,
+		fromCenter: false,
+		width: 200,
+		height: 200
+	});
+}
+
 function newGame (difficulty) {
 	clearBoard();
 	/* make game */
@@ -101,6 +111,7 @@ function newGame (difficulty) {
 			else setNumberFinal($("div[id='"+i+""+j+"']"),board[i][j]);
 		}
 	}
+	changeImage();
 	return solTemp;
 }
 
@@ -138,7 +149,7 @@ function giveHint () {
 				$("div[id='"+i+""+j+"']").find('.selected').addClass('wrong');
 			}
 		}
-$("div[id='"+i+""+j+"']")
+		changeImage("cheating.png");
 	}
 }
 
@@ -149,6 +160,7 @@ function setSolution () {
 			else setNumberSolution($("div[id='"+i+""+j+"']"),solution[i][j]);
 		}
 	}
+	changeImage("regret.jpg");
 }
 
 function clearBoard () {
@@ -298,6 +310,7 @@ function validateBoard() {
 				$("div[id='"+i+""+j+"']").addClass('final');
 			}
 		}
+		changeImage("winner.jpg");
 	}
 }
 
@@ -340,4 +353,5 @@ function FillBoard() {
 	box.append(table);
 	// Have to allow positioning
 	$(".cell").each(flower);
+	solution = newGame(30);
 }

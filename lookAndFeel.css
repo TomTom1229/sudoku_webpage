@@ -10,6 +10,13 @@ div#left{
 	top: 10%;
 } 
 
+div#right {
+	width 0px;
+	position: fixed;
+	right: 5%;
+	top: 10%;
+}
+
 div.select {
 	z-index: 3;
 	padding: 1em .2em;
