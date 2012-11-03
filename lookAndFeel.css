@@ -1,0 +1,168 @@
+html { 
+   background-color: #666;
+   font-family: "Segoe UI", Georgia, sans-serif;
+}
+
+div#left{ 
+	width 0px;
+	position: fixed;
+	left: 5%;
+	top: 10%;
+} 
+
+div.select {
+	z-index: 3;
+	padding: 1em .2em;
+	position: relative;
+}
+
+div.select.final {
+	pointer-events: none;
+}
+
+span.petal.final {
+	background-color: #008299;
+	pointer-events: none;
+}
+
+span.petal.final.wrong { 
+	background-color: #AC193D;
+}
+
+span.petal.selected {
+	z-index: 2;
+}
+
+span.petal.wrong { 
+	background-color: #D24726;
+}
+
+span.petal.right {
+	background-color: #47C92C;
+}
+
+.petal {
+	position: absolute;
+	-webkit-transition: -webkit-transform .5s ease 0, background-color 1.5s ease 0;
+	transition: transform .5s ease 0, background-color 1.5s ease 0;
+	top: 0;
+	left: 0; 
+}
+
+div.select:hover {
+	z-index: 4; 
+}
+
+div.select:hover .petal {
+	z-index: 5;
+	background-color: #A700AE;
+}
+
+div.select:hover .petal.selected {
+	background-color: #008299;
+	z-index: 7;
+}
+
+div.select:hover .petal:hover { 
+	z-index: 6;
+	background-color: #633EBF;
+}
+
+div.select:hover .petal:active {
+	-webkit-transition: background-color .1s ease 0;
+	transition: background-color .1s ease 0;
+	z-index: 6;
+	background-color: #094AB2;	
+}
+
+div.select:hover #bottom.petal { 
+	-webkit-transform: translate(0,3.15em);
+	transform: translate(0,3.15em);
+}
+
+div.select:hover #bottomright.petal {
+	-webkit-transform: translate(3.5em,3.15em);
+	transform: translate(3.5em,3.15em);
+}
+
+div.select:hover #bottomleft.petal {
+	-webkit-transform: translate(-3.5em,3.15em);
+	transform: translate(-3.5em,3.15em);
+}
+
+div.select:hover #right.petal { 
+	-webkit-transform: translate(3.5em,0);
+	transform: translate(3.5em,0);
+}
+
+div.select:hover #left.petal { 
+	-webkit-transform: translate(-3.5em,0);
+	transform: translate(-3.5em,0);
+}
+
+div.select:hover #topleft.petal {
+	-webkit-transform: translate(-3.5em,-3.15em);
+	transform: translate(-3.5em,-3.15em);
+} 
+
+div.select:hover #top.petal {
+	-webkit-transform: translate(0,-3.15em);
+	transform: translate(0,-3.15em);
+}
+
+div.select:hover #topright.petal {
+	-webkit-transform: translate(3.5em,-3.15em);
+	transform: translate(3.5em,-3.15em);
+}
+
+div.select:hover #default.petal {
+	-webkit-transform: translate(-6.75em,0);
+	transform: translate(-6.75em,0);
+}
+div
+option { 
+	background-color: #2E8DEF;
+	border-top-style: none;
+} 
+
+.cell {
+	padding: 1em 1.5em; 
+	color: #FFF;
+	background-color: #2E8DEF;
+	border: none;
+}
+span.button {
+  padding: 5px 15px;
+  left: 20px;
+  display: inline-block;
+  background-color: #008A00;
+  box-shadow: -5px 2px 5px #444;
+  text-decoration: none;
+  -webkit-perspective: 500;
+  -webkit-transition: background-color .5s ease, -webkit-transform .5s ease, box-shadow .5s ease; 
+  transition: background-color .5s ease, transform .5s ease, box-shadow .5s ease; 
+}
+span.button:hover {
+  box-shadow: -15px 12px 10px #444;
+  -webkit-transform: translate(.5em,-.5em);
+  transform: translate(.5em,-.5em);
+}
+span.button:active {
+  background-color: #00A600;
+  -webkit-transform: translate(-.1em,.1em);
+  transform: translate(-.1em,.1em);
+  box-shadow: -5px 2px 5px #444;
+}
+a.button {
+  text-decoration: none;
+  color: #FFF;
+}
+
+span#gameBox{ 
+	height: 100%;
+	margin: 3% 23%;
+	float: left;
+	left: 10%;
+	top: 10%;
+	background-color: #4D4D4F;
+} 
