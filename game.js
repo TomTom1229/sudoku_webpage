@@ -24,6 +24,7 @@ function changeImage (src) {
 		width: 200,
 		height: 200
 	});
+	//$("#status").fadeOut(1000);
 }
 
 function newGame (difficulty) {
@@ -146,7 +147,8 @@ function giveHint () {
 	if(!spot){
 		for(var i = 0; i < 9; ++i){
 			for(var j = 0; j < 9; ++j){
-				$("div[id='"+i+""+j+"']").find('.selected').addClass('wrong');
+				$("div[id='"+i+""+j+"']").find('.selected').removeClass('right');
+				$("div[id='"+i+""+j+"']").find('.selected').addClass('final wrong');
 			}
 		}
 		changeImage("cheating.png");
@@ -180,6 +182,7 @@ function setNumberFinal(cell /*Jquery Element for div*/, num /*Num to set */) {
 } 
 
 function setNumberSolution(cell, num){
+	cell.find(".selected").removeClass('wrong');
 	cell.find(".selected").removeClass('selected');
 	cell.find(":contains('"+num+"')")
 		.addClass('selected right');
